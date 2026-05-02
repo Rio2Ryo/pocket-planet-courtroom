@@ -1,0 +1,75 @@
+:root {
+  color: #f8f4df;
+  background: #160f1f;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background:
+  radial-gradient(circle at 10% 10%, rgba(124, 77, 255, .25), transparent 30%),
+  radial-gradient(circle at 80% 0%, rgba(0, 221, 180, .16), transparent 30%),
+  linear-gradient(135deg, #130d1e, #211326 48%, #141523); }
+button, textarea { font: inherit; }
+button { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.08); color: #fff7d6; border-radius: 999px; padding: .75rem 1rem; cursor: pointer; box-shadow: 0 10px 22px rgba(0,0,0,.2); transition: transform .15s ease, background .15s ease, border-color .15s ease; }
+button:hover, button:focus-visible { transform: translateY(-2px); background: rgba(255,255,255,.15); border-color: #ffe18d; outline: none; }
+main { width: min(1180px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 52px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); gap: 22px; align-items: stretch; }
+.eyebrow { color: #9ef8dc; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; }
+h1 { font-size: clamp(2rem, 5vw, 4.6rem); line-height: .96; margin: .3rem 0 1rem; letter-spacing: -0.06em; }
+.lead { color: #d9d0ee; font-size: 1.08rem; max-width: 780px; }
+.case-card, .planet-panel, .docket, .rulings, .motion-box, .history-grid > article, .debug-panel { border: 1px solid rgba(255,255,255,.14); background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.045)); backdrop-filter: blur(14px); border-radius: 28px; box-shadow: 0 22px 55px rgba(0,0,0,.28); }
+.case-card { padding: 24px; position: relative; overflow: hidden; }
+.case-card:before { content: 'GAVEL ACTIVE'; position: absolute; top: 14px; right: -35px; rotate: 24deg; color: rgba(255,225,141,.18); font-weight: 900; font-size: 2.1rem; }
+.case-card span { color: #ffe18d; font-weight: 800; }
+.case-card h2 { margin: .8rem 0; font-size: 1.45rem; }
+.case-card p, .case-card small { color: #dccfee; }
+.court-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 22px; margin-top: 22px; }
+.planet-panel { padding: 24px; min-height: 520px; display: grid; place-items: center; gap: 16px; }
+.planet-wrap { position: relative; width: min(440px, 86vw); aspect-ratio: 1; display: grid; place-items: center; }
+.planet { --wet: 50%; --moss: 50%; --heat: 50%; width: 74%; aspect-ratio: 1; border-radius: 50%; position: relative; overflow: hidden; background:
+  radial-gradient(circle at 35% 28%, rgba(255,255,255,.26), transparent 12%),
+  conic-gradient(from 120deg, #5be29d 0 calc(var(--moss) * .7), #2965d6 0 calc(var(--wet) + 22%), #806d42 0 76%, #ff765c 0 calc(var(--heat) + 30%), #2b8a54 0);
+  box-shadow: inset -28px -35px 44px rgba(0,0,0,.38), inset 18px 18px 44px rgba(255,255,255,.14), 0 0 0 12px rgba(255,255,255,.05), 0 30px 80px rgba(0,0,0,.45);
+  animation: rotatePlanet 18s linear infinite;
+}
+@keyframes rotatePlanet { to { transform: rotate(360deg); } }
+.river, .moss, .village, .volcano { position: absolute; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
+.river { top: 44%; left: 14%; color: #c5faff; font-size: 2.4rem; transform: rotate(-22deg); }
+.moss { color: #d8ff92; font-size: 1.1rem; font-weight: 900; }
+.moss-a { top: 24%; left: 45%; } .moss-b { top: 62%; left: 37%; }
+.village { bottom: 22%; right: 23%; color: #fff3b1; font-size: 1.6rem; }
+.volcano { top: 29%; right: 27%; color: #ff9b6d; font-size: 2.4rem; }
+.orbit { position: absolute; width: 54px; height: 54px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.1); box-shadow: 0 0 30px rgba(255,255,255,.1); }
+.moon { top: 6%; right: 8%; animation: bob 4s ease-in-out infinite; }
+.cloud { bottom: 10%; left: 6%; animation: bob 3s ease-in-out infinite reverse; }
+.wig { position: absolute; z-index: 2; top: 6%; left: 11%; font-size: 2.4rem; filter: drop-shadow(0 8px 12px rgba(0,0,0,.35)); }
+.wig.storm { animation: wiggle .35s linear infinite; }
+.weather-label { position: absolute; bottom: 0; padding: .45rem .8rem; border-radius: 999px; background: #211326; color: #9ef8dc; border: 1px solid rgba(255,255,255,.14); }
+@keyframes bob { 50% { transform: translateY(-15px); } }
+@keyframes wiggle { 50% { transform: rotate(7deg) scale(1.05); } }
+.controls, .stamp-row, .debug-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.docket { padding: 22px; }
+.meter { margin: 14px 0; }
+.meter > span { color: #d9d0ee; } .meter b { float: right; color: #fff; }
+.meter div { clear: both; height: 10px; background: rgba(255,255,255,.08); border-radius: 99px; overflow: hidden; margin-top: 7px; }
+.meter i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #9ef8dc, #ffe18d, #ff7ab8); }
+.rulings, .motion-box, .debug-panel { margin-top: 22px; padding: 22px; }
+.stamp { border-style: dashed; text-transform: capitalize; background: rgba(255,225,141,.1); }
+.stamp:hover { rotate: -2deg; }
+.motion-box { display: grid; grid-template-columns: 1fr minmax(260px, 420px) auto; gap: 16px; align-items: end; }
+label { display: grid; gap: 8px; color: #c8bde4; font-weight: 700; }
+textarea { min-height: 92px; resize: vertical; border-radius: 18px; border: 1px solid rgba(255,255,255,.16); background: rgba(0,0,0,.22); color: #fff7d6; padding: 14px; }
+.history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 22px; }
+.history-grid article { padding: 22px; }
+ol, ul { padding-left: 1.35rem; color: #eee4ff; }
+li { margin: .55rem 0; }
+.transcript li:first-child, ol li:first-child { color: #9ef8dc; }
+.debug-panel code { background: rgba(0,0,0,.28); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: .15rem .35rem; color: #ffe18d; }
+.debug-panel textarea { width: 100%; min-height: 80px; }
+@media (max-width: 860px) {
+  .hero, .court-grid, .history-grid, .motion-box { grid-template-columns: 1fr; }
+  .planet-panel { min-height: 420px; }
+  .motion-box button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
